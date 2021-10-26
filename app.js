@@ -1,16 +1,22 @@
+const input1 = document.getElementById('n1');
+const input2 = document.getElementById('n2');
+const btn = document.getElementById('out');
+
+input1.addEventListener('input', validate);
+input2.addEventListener('input', validate);
+btn.addEventListener('click', multiplication);
+
+function validate() {
+    if (parseInt(input1.value) && parseInt(input2.value)){
+        btn.disabled = false;
+    } else {
+        btn.disabled = true;
+    }
+}
+
 function multiplication() {
-    let num1, num2, result;
-
-    num1 = document.getElementById('n1').value;
-    num1 = parseInt(num1);
-
-    num2 = document.getElementById('n2').value;
-    num2 = parseInt(num2);
-
-    result = num1 * num2;
-
-    document.getElementById('out').innerHTML = result;
-    console.log('trololo');
-
-
+    const num1 = input1.value;
+    const num2 = input2.value;
+    const result = num1 * num2;
+    btn.innerText = result;
 }
