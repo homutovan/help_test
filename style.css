@@ -3,6 +3,8 @@ input:valid {border-color: green;}
 
 .form {
     display: block;
-    
+}
 
+.hide {
+    display: none;
 }
