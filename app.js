@@ -5,6 +5,7 @@ const resultEl = document.querySelector('.result');
 
 input1.addEventListener('input', validate);
 input2.addEventListener('input', validate);
+
 btn.addEventListener('click', () => {
     if (resultEl.classList.contains('hide')) {
         calcResult();
@@ -14,7 +15,10 @@ btn.addEventListener('click', () => {
 });
 
 function validate() {
-    if (parseInt(input1.value) && parseInt(input2.value)){
+    // console.log(Number.isInteger(input1.value));
+    // console.log(Number.isInteger(input2.value));
+    // console.log(Number.isInteger(input1.value) && Number.isInteger(input2.value));
+    if (Number.isInteger(input1.value * input2.value) && input1.value && input2.value) {
         btn.disabled = false;
     } else {
         btn.disabled = true;
@@ -38,6 +42,7 @@ function eraseResult() {
     input1.disabled = false;
     input2.disabled = false;
     btn.innerText = 'Рассчитать';
+    btn.disabled = true;
     resultEl.classList.add('hide');
 }
 
